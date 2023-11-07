@@ -1,19 +1,13 @@
 <div align="center">
-  
-  ![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/barber)
-  ![GitHub stars](https://img.shields.io/github/stars/codewithsadee/barber?style=social)
-  ![GitHub forks](https://img.shields.io/github/forks/codewithsadee/barber?style=social)
-[![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)
-  [![YouTube Video Views](https://img.shields.io/youtube/views/pIgMTd8ZFxY?style=social)](https://youtu.be/pIgMTd8ZFxY)
 
   <br />
   <br />
 
-  <h2 align="center">Barber - Barber Website</h2>
+  <h2 align="center">KC Hair & Skincare</h2>
 
-  Barber is a fully responsive barber website, <br />Responsive for all devices, build using HTML, CSS, and JavaScript.
+  KC Barber is a fully responsive barber website, <br />Responsive for all devices, built using HTML, CSS, and JavaScript.
 
-  <a href="https://codewithsadee.github.io/barber/"><strong>➥ Live Demo</strong></a>
+  <a href="https://onelcruz66.github.io/kcbarber/"><strong>➥ Live Demo</strong></a>
 
 </div>
 
@@ -36,18 +30,18 @@ To run **Barber** locally, run this command on your git bash:
 Linux and macOS:
 
 ```bash
-sudo git clone https://github.com/codewithsadee/barber.git
+sudo git clone https://github.com/onelcruz66/kcbarber.git
 ```
 
 Windows:
 
 ```bash
-git clone https://github.com/codewithsadee/barber.git
+git clone https://github.com/onelcruz66/kcbarber.git
 ```
 
 ### Contact
 
-If you want to contact with me you can reach me at [Twitter](https://www.twitter.com/codewithsadee).
+If you want to contact with me you can reach me at [Twitter](https://www.twitter.com/onelcruz66).
 
 ### License
 
