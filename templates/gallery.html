@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KC Hair & Skincare - Gallery</title>
+    <meta name="title" content="Barber - Barbers & Hair Cutting">
+    <meta name="description" content="This is a barber html template made by codewithsadee">
+
+    <link rel="shortcut icon" href="/static/images/favicon_kc.jpg" type="image/svg+xml">
+
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik:wght@300,400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - flaticon
+  -->
+  <link rel="stylesheet" href="/static/css/flaticon.min.css">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./static/images/barber_hero.jpg">
+</head>
+<body id="top">
+
+    <!-- Header (You can copy the header section from your index.html) -->
+    <header class="header">
+
+        <div class="header-top">
+          <div class="container">
+    
+            <ul class="header-top-list">
+    
+              <li class="header-top-item">
+                <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+    
+                <p class="item-title">Call Us :</p>
+    
+                <a href="tel:+19393234537" class="item-link">(939) 323-4537</a>
+              </li>
+    
+              <li class="header-top-item">
+                <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+    
+                <p class="item-title">Opening Hours:</p>
+    
+                <p class="item-text">Tuesday-Sunday, 10am - 6pm</p>
+              </li>
+    
+              <li>
+                <ul class="social-list">
+    
+                  <li>
+                    <a href="tel:+19393234537" class="item-link">
+                      <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+                    </a>
+                  </li>
+    
+                  <li>
+                    <a href="https://www.facebook.com/KCaballeroBarber" class="social-link">
+                      <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                  </li>
+    
+                  <li>
+                    <a href="https://www.instagram.com/kc.barbero" class="social-link">
+                      <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                  </li>
+    
+                  <li>
+                    <a href="https://api.whatsapp.com/send?phone=19393234537" class="item-link">
+                      <ion-icon name="logo-whatsapp" aria-hidden="true"></ion-icon>
+                    </a>
+                  </li>
+    
+                </ul>
+              </li>
+    
+            </ul>
+    
+          </div>
+        </div>
+    
+        <div class="header-bottom" data-header>
+          <div class="container">
+    
+            <a href="#" class="logo">
+              <img src="/static/images/KC_logo_black_120x113.jpg" alt="KC">
+            </a>
+    
+            <nav class="navbar container" data-navbar>
+              <ul class="navbar-list">
+    
+                <li class="navbar-item">
+                  <a href="{{ url_for('home') }}" class="navbar-link" data-nav-link>Home</a>
+                </li>
+    
+                <li class="navbar-item">
+                  <a href="{{ url_for('home') }}#services" class="navbar-link" data-nav-link>Services</a>
+                </li>
+    
+                <li class="navbar-item">
+                  <a href="{{ url_for('home') }}#pricing" class="navbar-link" data-nav-link>Pricing</a>
+                </li>
+    
+                <li class="navbar-item">
+                  <a href="{{ url_for('home') }}#gallery" class="navbar-link" data-nav-link>Gallery</a>
+                </li>
+    
+                <li class="navbar-item">
+                  <a href="{{ url_for('home') }}#appointment" class="navbar-link" data-nav-link>Appointment</a>
+                </li>
+    
+                <li class="navbar-item">
+                  <a href="{{ url_for('contact') }}" class="navbar-link" data-nav-link>Contact</a>
+                </li>
+    
+              </ul>
+            </nav>
+    
+            <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+              <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+            </button>
+    
+            <a href="#" class="btn has-before">
+              <span class="span">Appointment</span>
+    
+              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+            </a>
+    
+          </div>
+        </div>
+    
+      </header>
+
+    <!-- Navigation (You can copy the navigation section from your index.html) -->
+
+    <main>
+        <article>
+            <section class="section hero has-before has-bg-image" id="home" aria-label="home"
+        style="background-image: url('./static/images/barber_hero.jpg')">
+        <div class="container">
+
+          <h1 class="h1 hero-title">KC Hair & Skincare</h1>
+
+          <p class="hero-text">
+            Sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+            suspendisse
+            ultrices gravida
+          </p>
+          </div>
+            </section>
+            <!-- Gallery Section -->
+            <section class="section gallery" id="gallery" aria-label="photo gallery">
+                <div class="container">
+                    <div class="title-wrapper">
+                        <div>
+                            <h2 class="h2 section-title">Latest Photo Gallery</h2>
+                            <p class="section-text">Sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt labore dolore magna aliqua suspendisse</p>
+                        </div>
+                    </div>
+                    <ul class="grid-list">
+                        <!-- Gallery Cards - You can add more cards as needed -->
+                        <li>
+                            <div class="gallery-card">
+                                <figure class="card-banner img-holder" style="--width: 422; --height: 550;">
+                                    <img src="./static/images/kc_customer.jpg" width="422" height="550" loading="lazy" alt="Hair Cutting" class="img-cover">
+                                </figure>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="gallery-card">
+                                <!-- Add more gallery cards here -->
+                                <figure class="card-banner img-holder" style="--width: 422; --height: 550;">
+                                    <img src="./static/images/kc_customer2.jpg" width="422" height="550" loading="lazy" alt="Hair Cutting" class="img-cover">
+                                </figure>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="gallery-card">
+                                <!-- Add more gallery cards here -->
+                                <figure class="card-banner img-holder" style="--width: 422; --height: 550;">
+                                    <img src="./static/images/kc_customer3.jpg" width="422" height="550" loading="lazy" alt="Hair Cutting" class="img-cover">
+                                </figure>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="gallery-card">
+                                <!-- Add more gallery cards here -->
+                                <figure class="card-banner img-holder" style="--width: 422; --height: 550;">
+                                    <img src="./static/images/kc_customer4.jpg" width="422" height="550" loading="lazy" alt="Hair Cutting" class="img-cover">
+                                </figure>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer has-bg-image" style="background-image: url('./static/images/footer-bg.png')">
+    <div class="container">
+
+      <div class="footer-top">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="/static/images/KC_logo_black_120x113.jpg" alt="KC">
+          </a>
+
+          <form action="" class="input-wrapper">
+
+            <input type="email" name="email_address" placeholder="Enter Your Email" required class="email-field">
+
+            <button type="submit" class="btn has-before">
+              <span class="span">Subscribe Now</span>
+
+              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+            </button>
+
+          </form>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Quick Links</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link has-before">Our Services</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link has-before">Meet Our Team</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link has-before">Our Portfolio</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link has-before">Need A Career?</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link has-before">News & Blog</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Services</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link has-before">Hair Cutting</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link has-before">Shaving & Design</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link has-before">Hair Colors</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link has-before">Beauty & Spa</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link has-before">Body Massages</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-list-title">Contact Us</p>
+            </li>
+
+            <li class="footer-list-item">
+              <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+
+              <address class="contact-link">
+                Ventana Al Mar, Rincon, Puerto Rico, 00677
+              </address>
+            </li>
+
+            <li class="footer-list-item">
+              <ion-icon name="logo-whatsapp" aria-hidden="true"></ion-icon>
+
+              <a href="tel:+1-939-323-4537" class="contact-link">+1 (939) 323-4537</a>
+            </li>
+
+            <li class="footer-list-item">
+              <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+
+              <span class="contact-link">Tuesday-Sunday, 10am - 6pm</span>
+            </li>
+
+            <li class="footer-list-item">
+              <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+
+              <a href="mailto:support@gmail.com" class="contact-link">support@gmail.com</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; 2022 <a href="#" class="copyright-link">KC Hair & Skincare</a>. All Rights Reserved.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./static/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- Footer (You can copy the footer section from your index.html) -->
+
+    <!-- Back to Top Button (You can copy the back to top button section from your index.html) -->
+
+    <!-- JavaScript and Ionicons (You can copy the script and ionicon links from your index.html) -->
+
+</body>
+</html>

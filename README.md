@@ -5,9 +5,7 @@
 
   <h2 align="center">KC Hair & Skincare</h2>
 
-  KC Barber is a fully responsive barber website, <br />Responsive for all devices, built using HTML, CSS, and JavaScript.
-
-  <a href="https://onelcruz66.github.io/kcbarber/"><strong>➥ Live Demo</strong></a>
+  <a href="https://onelcruz66.github.io/"><strong>➥ Live Demo</strong></a>
 
 </div>
 
@@ -15,7 +13,7 @@
 
 ### Demo Screeshots
 
-![Barber Desktop Demo](./readme-images/desktop.png "Desktop Demo")
+![Barber Desktop Demo](./readme-images/desktop2.png "Desktop Demo")
 
 ### Prerequisites
 
