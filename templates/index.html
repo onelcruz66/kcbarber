@@ -149,7 +149,7 @@
           <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
         </button>
 
-        <a href="#" class="btn has-before">
+        <a href="#appointment" class="btn has-before">
           <span class="span">Appointment</span>
 
           <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
@@ -178,9 +178,7 @@
           <h1 class="h1 hero-title">KC Hair & Skincare</h1>
 
           <p class="hero-text">
-            Sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-            suspendisse
-            ultrices gravida
+            Welcome to KC Hair & Skincare – a haven for sharp looks and smooth vibes. Sit down, relax, and let's elevate your style.
           </p>
 
           <a href="#" class="btn has-before">
@@ -204,10 +202,6 @@
         <div class="container">
 
           <h2 class="h2 section-title text-center">Service We Provide</h2>
-
-          <p class="section-text text-center">
-            Sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt labore dolore magna aliqua suspendisse
-          </p>
 
           <ul class="grid-list">
 
@@ -361,10 +355,6 @@
         <div class="container">
 
           <h2 class="h2 section-title text-center">Awesome Pricing Plan</h2>
-
-          <p class="section-text text-center">
-            Sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt labore dolore magna aliqua suspendisse
-          </p>
 
           <div class="pricing-tab-container">
 
@@ -633,18 +623,6 @@
                     class="img-cover">
                 </figure>
 
-                <div class="card-content">
-
-                  <h3 class="h3 card-title">Hair Cutting</h3>
-
-                  <p class="card-text">Barbers & Salon Services</p>
-
-                  <a href="#" class="card-btn" aria-label="Read more">
-                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                  </a>
-
-                </div>
-
               </div>
             </li>
 
@@ -655,18 +633,6 @@
                   <img src="/static/images/kc_customer2.jpg" width="422" height="550" loading="lazy" alt="Hair Cutting"
                     class="img-cover">
                 </figure>
-
-                <div class="card-content">
-
-                  <h3 class="h3 card-title">Hair Cutting</h3>
-
-                  <p class="card-text">Barbers & Salon Services</p>
-
-                  <a href="#" class="card-btn" aria-label="Read more">
-                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                  </a>
-
-                </div>
 
               </div>
             </li>
@@ -679,18 +645,6 @@
                     class="img-cover">
                 </figure>
 
-                <div class="card-content">
-
-                  <h3 class="h3 card-title">Hair Cutting</h3>
-
-                  <p class="card-text">Barbers & Salon Services</p>
-
-                  <a href="#" class="card-btn" aria-label="Read more">
-                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                  </a>
-
-                </div>
-
               </div>
             </li>
 
@@ -701,18 +655,6 @@
                   <img src="/static/images/kc_customer4.jpg" width="422" height="550" loading="lazy" alt="Hair Cutting"
                     class="img-cover">
                 </figure>
-
-                <div class="card-content">
-
-                  <h3 class="h3 card-title">Hair Cutting</h3>
-
-                  <p class="card-text">Barbers & Salon Services</p>
-
-                  <a href="#" class="card-btn" aria-label="Read more">
-                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                  </a>
-
-                </div>
 
               </div>
             </li>
@@ -742,14 +684,19 @@
 
             <div class="card-content">
 
-              <h2 class="h2 section-title">Make Appointment</h2>
+              <h2 class="h2 section-title">Request Appointment</h2>
 
               <p class="section-text">
-                Sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt labore dolore magna aliqua
-                suspendisse
+                Call or reach out to us in social media to schedule an appointment with one of our premier barbers.
               </p>
 
-              <form action="" class="appoin-form">
+              <ul class="contact-info">
+                <li class="contact-us"><ion-icon name="logo-facebook" aria-hidden="true"></ion-icon><a href="https://www.facebook.com/KCaballeroBarber" target="_blank" style="color: white; font-size: large;">https://www.facebook.com/KCaballeroBarber</a></li>
+                <li class="contact-us"><ion-icon name="logo-instagram" aria-hidden="true"></ion-icon> <a href="https://www.instagram.com/kc.barbero" target="_blank" style="color: white; font-size: large;">https://www.instagram.com/kc.barbero</a></li>
+                <li class="contact-us"><ion-icon name="call" aria-hidden="true"></ion-icon><a href="tel:+19393234537" style="color: white; font-size: large;">+1 (939) 323-4537</a></li>
+            </ul>
+
+              <!-- <form action="" class="appoin-form">
 
                 <div class="input-wrapper">
                   <input type="text" name="name" placeholder="Your Full Name" required class="input-field">
@@ -776,12 +723,12 @@
                 <textarea name="message" placeholder="Write Message" required class="input-field"></textarea>
 
                 <button type="submit" class="form-btn">
-                  <span class="span">Appointment Now</span>
+                  <span class="span">Request Now</span>
 
                   <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
                 </button>
 
-              </form>
+              </form> -->
 
             </div>
 
@@ -840,7 +787,7 @@
             </li>
 
             <li>
-              <a href="#" class="footer-link has-before">Our Services</a>
+              <a href="#services" class="footer-link has-before">Our Services</a>
             </li>
 
             <li>
@@ -848,15 +795,11 @@
             </li>
 
             <li>
-              <a href="#" class="footer-link has-before">Our Portfolio</a>
+              <a href="{{ url_for('gallery') }}" class="footer-link has-before">Our Portfolio</a>
             </li>
 
             <li>
               <a href="#" class="footer-link has-before">Need A Career?</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link has-before">News & Blog</a>
             </li>
 
           </ul>
