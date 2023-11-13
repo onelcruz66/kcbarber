@@ -1,0 +1,3 @@
+http://35.92.84.48 {
+    reverse_proxy localhost:8000
+}
