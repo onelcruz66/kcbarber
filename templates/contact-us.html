@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>KC Hair & Skincare - Gallery</title>
+    <title>KC Hair & Skincare - Contact Us</title>
     <meta name="title" content="KC Hair & Skincare">
     <meta name="description" content="Barber shop located in Rincon, Puerto Rico">
 
@@ -30,7 +30,7 @@
   <!-- 
     - preload images
   -->
-  <link rel="preload" as="image" href="./static/images/barber_hero.jpg">
+  <link rel="preload" as="image" href="./static/images/hero-banner.jpg">
 </head>
 <body id="top">
 
@@ -55,7 +55,7 @@
     
                 <p class="item-title">Opening Hours:</p>
     
-                <p class="item-text">Tuesday-Sunday, 10am - 6pm</p>
+                <p class="item-text">By Appointment Only</p>
               </li>
     
               <li>
@@ -96,7 +96,7 @@
         <div class="header-bottom" data-header>
           <div class="container">
     
-            <a href="#" class="logo">
+            <a href="{{ url_for('home') }}" class="logo">
               <img src="/static/images/KC_logo_black_120x113.jpg" alt="KC">
             </a>
     
@@ -116,7 +116,7 @@
                 </li>
     
                 <li class="navbar-item">
-                  <a href="{{ url_for('home') }}#gallery" class="navbar-link" data-nav-link>Gallery</a>
+                  <a href="{{ url_for('gallery') }}" class="navbar-link" data-nav-link>Gallery</a>
                 </li>
     
                 <li class="navbar-item">
@@ -150,14 +150,11 @@
     <main>
         <article>
             <section class="section hero has-before has-bg-image" id="home" aria-label="home"
-        style="background-image: url('./static/images/barber_hero.jpg')">
+        style="background-image: url('./static/images/hero-banner.jpg')">
         <div class="container">
 
-          <h1 class="h1 hero-title">KC Hair & Skincare</h1>
+          <h1 class="h1 hero-title">Contact Us</h1>
 
-          <p class="hero-text">
-            Welcome to KC Hair & Skincare – a haven for sharp looks and smooth vibes. Sit down, relax, and let's elevate your style.
-          </p>
           </div>
             </section>
             <!-- Contact Information Section -->
@@ -174,9 +171,7 @@
                         <li><ion-icon name="location-outline" aria-hidden="true"></ion-icon><a>Ventana Al Mar, Rincon, Puerto Rico, 00677</a></li>
                     </ul>
                 </div>
-                <div class="google-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d236.7018059050306!2d-67.25279657037757!3d18.3368390886332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1699471456379!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+
             </section>
         </article>
     </main>
@@ -209,6 +204,9 @@
           </form>
 
         </div>
+        <div class="google-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3787.2288190837558!2d-67.25787551471517!3d18.336842530225105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c02a59b5c875741%3A0x909d4005e14c091b!2sKC%20Hair%20%26%20Skincare!5e0!3m2!1sen!2sus!4v1699986808354!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
 
         <div class="footer-link-box">
 
@@ -219,7 +217,7 @@
             </li>
 
             <li>
-              <a href="#" class="footer-link has-before">Our Services</a>
+              <a href="{{ url_for('home') }}#services" class="footer-link has-before">Our Services</a>
             </li>
 
             <li>
@@ -227,15 +225,11 @@
             </li>
 
             <li>
-              <a href="#" class="footer-link has-before">Our Portfolio</a>
+              <a href="{{ url_for('gallery') }}" class="footer-link has-before">Our Portfolio</a>
             </li>
 
             <li>
               <a href="#" class="footer-link has-before">Need A Career?</a>
-            </li>
-
-            <li>
-              <a href="#" class="footer-link has-before">News & Blog</a>
             </li>
 
           </ul>
@@ -291,13 +285,7 @@
             <li class="footer-list-item">
               <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
-              <span class="contact-link">Tuesday-Sunday, 10am - 6pm</span>
-            </li>
-
-            <li class="footer-list-item">
-              <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
-
-              <a href="mailto:support@gmail.com" class="contact-link">support@gmail.com</a>
+              <span class="contact-link">By Appointment Only</span>
             </li>
 
           </ul>
