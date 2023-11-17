@@ -5,7 +5,7 @@
 
   <h2 align="center">KC Hair & Skincare</h2>
 
-  <a href="https://onelcruz66.github.io/"><strong>➥ Live Demo</strong></a>
+  <a href="https://kchairskincare.com/"><strong>➥ Live Demo</strong></a>
 
 </div>
 
@@ -40,7 +40,3 @@ git clone https://github.com/onelcruz66/kcbarber.git
 ### Contact
 
 If you want to contact with me you can reach me at [Twitter](https://www.twitter.com/onelcruz66).
-
-### License
-
-This project is **free to use** and does not contains any license.
