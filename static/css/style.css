@@ -1437,3 +1437,48 @@ a.contact-link:is(:hover, :focus) { color: var(--white); }
   color: #007BFF;
 }
 
+.icon-large {
+  font-size: 12px;
+}
+
+.login-container {
+  background: rgba(255, 255, 255, 0);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  margin: auto;
+}
+
+.login-container h2 {
+  color:hsl(0, 0%, 100%)
+}
+
+
+
+.login-container form {
+  background: rgba(0, 0, 0, 0.8); /* Change form background color to black with 80% opacity */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+
+.login-container input {
+  color: white;
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.login-container button {
+  /* background-color: #4CAF50; */
+  color: white;
+  padding: 10px 15px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

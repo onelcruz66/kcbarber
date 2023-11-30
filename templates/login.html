@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KC Hair & Skincare - Login</title>
+    <meta name="title" content="KC Hair & Skincare">
+    <meta name="description" content="Barber shop located in Rincon, Puerto Rico">
+
+    <link rel="shortcut icon" href="/static/images/favicon_kc.jpg" type="image/svg+xml">
+
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik:wght@300,400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - flaticon
+  -->
+  <link rel="stylesheet" href="/static/css/flaticon.min.css">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./static/images/hero-banner.jpg">
+</head>
+
+<body style="background-image: url('./static/images/hero-banner.jpg');">
+    <a href="{{ url_for('home') }}" class="logo">
+        <img src="/static/images/KC_logo_black_120x113.jpg" alt="KC">
+    </a>
+    
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="#" method="post">
+            <!-- <input type="text" name="username" class="login-input" placeholder="Username" required>
+            <br>
+            <input type="password" name="password" class="login-input" placeholder="Password" required>
+            <br> -->
+            {{ form.hidden_tag() }}
+            {{ form.username }}
+            {{ form.password }}
+            {{ form.submit(class="btn has-before") }} 
+
+            <!-- <button type="submit" class="btn has-before">Login</button> -->
+        </form>
+    </div>
+
+    <script type="text/javascript" src="/static/js/script.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+<!-- <body class="section hero has-before has-bg-image" id="home" aria-label="home"
+            style="background-image: url('./static/images/hero-banner.jpg')">
+            
+    
+    <h1 class="h1 hero-title">Login</h1>
+
+
+    Custom JS and Ionicon links -->
+  
+<!-- </body> -->
+
+</html>

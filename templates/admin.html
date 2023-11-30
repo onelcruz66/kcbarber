@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KC Hair & Skincare - Admin Dashboard</title>
+    <meta name="title" content="KC Hair & Skincare">
+    <meta name="description" content="Barber shop located in Rincon, Puerto Rico">
+
+    <link rel="shortcut icon" href="/static/images/favicon_kc.jpg" type="image/svg+xml">
+
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik:wght@300,400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - flaticon
+  -->
+  <link rel="stylesheet" href="/static/css/flaticon.min.css">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./static/images/hero-banner.jpg">
+
+
+</head>
+<body id="top">
+
+    <!-- Header (You can copy the header section from your index.html) -->
+    <header class="header">
+
+        <div class="header-top">
+          <div class="container">
+    
+            <ul class="header-top-list">
+    
+              <li class="header-top-item">
+                <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+    
+                <p class="item-title">Call Us :</p>
+    
+                <a href="tel:+19393234537" class="item-link">(939) 323-4537</a>
+              </li>
+    
+              <li>
+                <ul class="social-list">
+    
+                  <li>
+                    <a href="tel:+19393234537" class="item-link">
+                      <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+                    </a>
+                  </li>
+    
+                  <li>
+                    <a href="https://www.facebook.com/KCaballeroBarber" class="social-link">
+                      <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                  </li>
+    
+                  <li>
+                    <a href="https://www.instagram.com/kc.barbero" class="social-link">
+                      <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                  </li>
+    
+                  <li>
+                    <a href="https://api.whatsapp.com/send?phone=19393234537" class="item-link">
+                      <ion-icon name="logo-whatsapp" aria-hidden="true"></ion-icon>
+                    </a>
+                  </li>
+    
+                </ul>
+              </li>
+    
+            </ul> 
+    
+          </div>
+        </div>
+    
+        <div class="header-bottom" data-header>
+          <div class="container">
+    
+            <a href="{{ url_for('admin') }}" class="logo">
+              <img src="/static/images/KC_logo_black_120x113.jpg" alt="KC">
+            </a>
+    
+            <nav class="navbar container" data-navbar>
+              <ul class="navbar-list">
+    
+                <li class="navbar-item">
+                  <a href="{{ url_for('admin') }}" class="navbar-link" data-nav-link>Admin Home</a>
+                </li>
+    
+                <li class="navbar-item">
+                  <a href="{{ url_for('register') }}" class="navbar-link" data-nav-link>Register User</a>
+                </li>
+
+                <li class="navbar-item">
+                    <a href="{{ url_for('logout') }}" class="navbar-link" data-nav-link>Logout</a>
+                  </li>
+    
+              </ul>
+            </nav>
+    
+            <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+              <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+            </button>
+    
+            <!-- <a href="{{ url_for('home') }}#appointment" class="btn has-before">
+              <span class="span">Appointment</span>
+    
+              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+            </a> -->
+    
+          </div>
+        </div>
+    
+      </header>
+
+  <main>
+    <section class="section hero has-before has-bg-image" id="home" aria-label="home"
+        style="background-image: url('./static/images/hero-banner.jpg')">
+        <div class="container">
+
+          <h1 class="h1 hero-title">Admin Dashboard</h1>
+
+          </div>
+            </section>
+    <!-- Success Message -->
+    <section class="section success">
+      <div class="container">
+        <h2 class="h2 section-title text-center">Requested Appointments</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <!-- <th>Email Address</th> -->
+                    <th>Phone Number</th>
+                    <!-- <th>Service Requested</th> -->
+                    <th>Service Requested</th>
+                    <!-- <th>Message</th> -->
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for appointment in appointments %}
+                <tr>
+                    <td>{{ appointment.customer_name }}</td>
+                    <!-- <td>{{ appointment.email_address }}</td> -->
+                    <td>{{ appointment.phone_number }}</td>
+                    <td>{{ appointment.service_requested }}</td>
+                    <!-- <td>{{ appointment.date_requested }}</td> -->
+                    <!-- <td>{{ appointment.customer_message }}</td> -->
+                    <td>
+                        <form method="post" action="/delete_appointment/{{ appointment.id }}" style="display: inline;">
+                            <button type="submit" class="delete-btn"><ion-icon name="trash-outline" aria-hidden="true"></ion-icon></button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            
+        </table>
+      </div>
+    </section>
+    <section class="section success">
+        <div class="container">
+          <h2 class="h2 section-title text-center">Appointment Details</h2>
+          <div class="table-container">
+          <table border="1">
+              <thead>
+                  <tr>
+                      <th>Customer Name</th>
+                      <th>Email Address</th>
+                      <th>Phone Number</th>
+                      <th>Service Requested</th>
+                      <th>Date Requested</th>
+                      <th>Message</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for appointment in appointments %}
+                  <tr>
+                      <td>{{ appointment.customer_name }}</td>
+                      <td>{{ appointment.email_address }}</td>
+                      <td>{{ appointment.phone_number }}</td>
+                      <td>{{ appointment.service_requested }}</td>
+                      <td>{{ appointment.date_requested }}</td>
+                      <td>{{ appointment.customer_message }}</td>
+                  </tr>
+              {% endfor %}
+              </tbody>
+              
+          </table>
+          </div>
+        </div>
+      </section>
+  </main>
+  <style>
+body {
+    overflow-x: auto;
+}
+.table-container {
+    overflow-x: auto;
+    max-width: 100%;
+    padding: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    th, td {
+        padding: 8px;
+    }
+
+    tr {
+        display: block;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #ddd;
+    }
+
+    td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: inline-block;
+        width: 50%;
+        margin-bottom: 5px;
+    }
+    /* .table-container {
+        overflow-x: auto;
+        padding: 20px;
+    } */
+}
+.delete-btn {
+        background-color: #ff5555; /* Red color */
+        color: white;
+        border: none;
+        padding: 8px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+  </style>
+
+  <!-- Back to Top Button -->
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+  <!-- Custom JS and Ionicon links -->
+  <script>
+    function toggleDetails(appointmentId) {
+        const detailsContainer = document.getElementById('details' + appointmentId);
+        detailsContainer.style.display = detailsContainer.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+  <script>
+    var elem = document.querySelector('.table-container');
+
+// Add a touchmove event listener with passive set to true
+elem.addEventListener('touchmove', handleTouchMove, { passive: true });
+
+// Define the event handler function
+function handleTouchMove(event) {
+    // You can add specific handling here if needed
+    // By default, you don't need to preventDefault for scrolling
+}
+  </script>
+  <script type="text/javascript" src="/static/js/script.js" defer></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

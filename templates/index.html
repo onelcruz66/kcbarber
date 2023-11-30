@@ -45,6 +45,13 @@
 </head>
 
 <body id="top">
+  {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert alert-info">
+                {{ messages[0] }}
+            </div>
+        {% endif %}
+    {% endwith %}
 
   <!-- 
     - #HEADER
@@ -134,17 +141,19 @@
               <a href="{{ url_for('contact') }}" class="navbar-link" data-nav-link>Contact</a>
             </li>
 
+            <li class="navbar-item">
+              <a href="{{ url_for('login') }}" class="navbar-link" data-nav-link>Login</a>
+            </li>
+
           </ul>
         </nav>
 
         <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
           <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
         </button>
-
-        <a href="#appointment" class="btn has-before">
-          <span class="span">Appointment</span>
-
-          <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+        <!-- <span class="span">Log In</span> -->
+        <a href="{{ url_for('login') }}" class="btn has-before">
+          <ion-icon name="enter-outline" aria-hidden="true" class="icon-large"></ion-icon>
         </a>
 
       </div>
@@ -193,7 +202,7 @@
       <section class="section service" id="services" aria-label="services">
         <div class="container">
 
-          <h2 class="h2 section-title text-center">Service We Provide</h2>
+          <h2 class="h2 section-title text-center">Services We Provide</h2>
 
           <ul class="grid-list">
 
@@ -205,38 +214,12 @@
                 </div>
 
                 <h3 class="h3">
-                  <a href="#" class="card-title">Hair Cutting Style</a>
+                  <a class="card-title">Hair Cutting</a>
                 </h3>
 
                 <p class="card-text">
-                  Sit amet consectetur adipisci elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Walk with confidence with our premier hair cuts. We will have you looking like a million bucks.
                 </p>
-
-                <a href="#" class="card-btn" aria-label="more">
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </a>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="service-card">
-
-                <div class="card-icon">
-                  <i class="flaticon-shampoo"></i>
-                </div>
-
-                <h3 class="h3">
-                  <a href="#" class="card-title">Hair Washing</a>
-                </h3>
-
-                <p class="card-text">
-                  Sit amet consectetur adipisci elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-
-                <a href="#" class="card-btn" aria-label="more">
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </a>
 
               </div>
             </li>
@@ -249,16 +232,12 @@
                 </div>
 
                 <h3 class="h3">
-                  <a href="#" class="card-title">Body Treatments</a>
+                  <a class="card-title">Body Treatments</a>
                 </h3>
 
                 <p class="card-text">
-                  Sit amet consectetur adipisci elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Massages and therapeutic cups to help you ease your tension and increase your flow of ki.
                 </p>
-
-                <a href="#" class="card-btn" aria-label="more">
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </a>
 
               </div>
             </li>
@@ -271,16 +250,12 @@
                 </div>
 
                 <h3 class="h3">
-                  <a href="#" class="card-title">Beauty & Spa</a>
+                  <a class="card-title">Beauty & Spa</a>
                 </h3>
 
                 <p class="card-text">
-                  Sit amet consectetur adipisci elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Facials, blackhead masks, keratine treatments, and more.  Everything you need to look your best.
                 </p>
-
-                <a href="#" class="card-btn" aria-label="more">
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </a>
 
               </div>
             </li>
@@ -293,38 +268,12 @@
                 </div>
 
                 <h3 class="h3">
-                  <a href="#" class="card-title">Stylist Shaving</a>
+                  <a class="card-title">Stylist Shaving</a>
                 </h3>
 
                 <p class="card-text">
-                  Sit amet consectetur adipisci elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  With each haircut you are guaranteed a premier straight razor line up.  Nobody leaves without looking their sharpest.
                 </p>
-
-                <a href="#" class="card-btn" aria-label="more">
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </a>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="service-card">
-
-                <div class="card-icon">
-                  <i class="flaticon-hair-dye"></i>
-                </div>
-
-                <h3 class="h3">
-                  <a href="#" class="card-title">Multi Hair Colors</a>
-                </h3>
-
-                <p class="card-text">
-                  Sit amet consectetur adipisci elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-
-                <a href="#" class="card-btn" aria-label="more">
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </a>
 
               </div>
             </li>
@@ -346,7 +295,7 @@
         style="background-image: url('/static/images/pricing-bg.jpg')">
         <div class="container">
 
-          <h2 class="h2 section-title text-center">Awesome Pricing Plan</h2>
+          <h2 class="h2 section-title text-center">Prices starting at $35</h2>
 
           <div class="pricing-tab-container">
 
@@ -382,7 +331,7 @@
                 </button>
               </li>
 
-              <li>
+              <!-- <li>
                 <button class="filter-btn" data-filter-btn="face-washing">
                   <div class="btn-icon">
                     <i class="flaticon-spa" aria-hidden="true"></i>
@@ -390,9 +339,9 @@
 
                   <p class="btn-text">Face Washing</p>
                 </button>
-              </li>
+              </li> -->
 
-              <li>
+              <!-- <li>
                 <button class="filter-btn" data-filter-btn="meditations">
                   <div class="btn-icon">
                     <i class="flaticon-yoga" aria-hidden="true"></i>
@@ -400,7 +349,7 @@
 
                   <p class="btn-text">Meditations</p>
                 </button>
-              </li>
+              </li> -->
 
               <li>
                 <button class="filter-btn" data-filter-btn="shaving">
@@ -408,7 +357,7 @@
                     <i class="flaticon-razor-blade" aria-hidden="true"></i>
                   </div>
 
-                  <p class="btn-text">Shaving</p>
+                  <p class="btn-text">Hair Cuts</p>
                 </button>
               </li>
 
@@ -425,12 +374,12 @@
                   </figure>
 
                   <div class="wrapper">
-                    <h3 class="h3 card-title">Hair Cutting & Fitting</h3>
+                    <h3 class="h3 card-title">Hair Cut</h3>
 
-                    <p class="card-text">Clean & simple 30-40 minutes</p>
+                    <p class="card-text">30-40 minutes</p>
                   </div>
 
-                  <data class="card-price" value="89">$89</data>
+                  <data class="card-price" value="35">$35+</data>
 
                 </div>
               </li>
@@ -444,17 +393,17 @@
                   </figure>
 
                   <div class="wrapper">
-                    <h3 class="h3 card-title">Shaving & Facial</h3>
+                    <h3 class="h3 card-title">Beard Cut</h3>
 
-                    <p class="card-text">Clean & simple 30-40 minutes</p>
+                    <p class="card-text">30-40 minutes</p>
                   </div>
 
-                  <data class="card-price" value="45">$45</data>
+                  <data class="card-price" value="35">$35+</data>
 
                 </div>
               </li>
 
-              <li data-filter="face-washing">
+              <!-- <li data-filter="face-washing">
                 <div class="pricing-card">
 
                   <figure class="card-banner img-holder" style="--width: 90; --height: 90;">
@@ -471,7 +420,7 @@
                   <data class="card-price" value="35">$35</data>
 
                 </div>
-              </li>
+              </li> -->
 
               <li data-filter="body-treatments">
                 <div class="pricing-card">
@@ -484,10 +433,29 @@
                   <div class="wrapper">
                     <h3 class="h3 card-title">Body Massage</h3>
 
-                    <p class="card-text">Clean & simple 30-40 minutes</p>
+                    <p class="card-text">30-40 minutes</p>
                   </div>
 
-                  <data class="card-price" value="56">$56</data>
+                  <data class="card-price" value="35">$35+</data>
+
+                </div>
+              </li>
+
+              <li data-filter="body-treatments">
+                <div class="pricing-card">
+
+                  <figure class="card-banner img-holder" style="--width: 90; --height: 90;">
+                    <img src="/static/images/therapy_cups_smaller_image.jpg" width="90" height="90" alt="Massage Cups"
+                      class="img-cover">
+                  </figure>
+
+                  <div class="wrapper">
+                    <h3 class="h3 card-title">Therapeutic Massage Cups</h3>
+
+                    <p class="card-text">30-40 minutes</p>
+                  </div>
+
+                  <data class="card-price" value="35">$35</data>
 
                 </div>
               </li>
@@ -501,17 +469,17 @@
                   </figure>
 
                   <div class="wrapper">
-                    <h3 class="h3 card-title">Beauty & Spa</h3>
+                    <h3 class="h3 card-title">Facials</h3>
 
-                    <p class="card-text">Clean & simple 30-40 minutes</p>
+                    <p class="card-text">30-40 minutes</p>
                   </div>
 
-                  <data class="card-price" value="27">$27</data>
+                  <data class="card-price" value="35">$35+</data>
 
                 </div>
               </li>
 
-              <li data-filter="face-washing">
+              <li data-filter="beauty-spa">
                 <div class="pricing-card">
 
                   <figure class="card-banner img-holder" style="--width: 90; --height: 90;">
@@ -520,36 +488,38 @@
                   </figure>
 
                   <div class="wrapper">
-                    <h3 class="h3 card-title">Facial & Face Wash</h3>
+                    <h3 class="h3 card-title">Blackhead Masks</h3>
 
-                    <p class="card-text">Clean & simple 30-40 minutes</p>
+                    <p class="card-text">30-40 minutes</p>
                   </div>
 
-                  <data class="card-price" value="63">$63</data>
+                  <data class="card-price" value="35">$35+</data>
 
                 </div>
               </li>
 
-              <li data-filter="body-treatments">
+              <li data-filter="beauty-spa">
                 <div class="pricing-card">
 
                   <figure class="card-banner img-holder" style="--width: 90; --height: 90;">
-                    <img src="/static/images/pricing-7.jpg" width="90" height="90" alt="Backbone Massage"
+                    <img src="/static/images/girl_smaller_image.jpg" width="90" height="90" alt="Beauty & Spa"
                       class="img-cover">
                   </figure>
 
                   <div class="wrapper">
-                    <h3 class="h3 card-title">Backbone Massage</h3>
+                    <h3 class="h3 card-title">Keratine Treatments</h3>
 
-                    <p class="card-text">Clean & simple 30-40 minutes</p>
+                    <p class="card-text">30-40 minutes</p>
                   </div>
 
-                  <data class="card-price" value="43">$43</data>
+                  <data class="card-price" value="35">$35+</data>
 
                 </div>
               </li>
 
-              <li data-filter="meditations">
+              
+
+              <!-- <li data-filter="meditations">
                 <div class="pricing-card">
 
                   <figure class="card-banner img-holder" style="--width: 90; --height: 90;">
@@ -566,7 +536,7 @@
                   <data class="card-price" value="74">$74</data>
 
                 </div>
-              </li>
+              </li> -->
 
             </ul>
 
@@ -677,7 +647,7 @@
 
               <h2 class="h2 section-title">Request Appointment</h2>
 
-              <p class="section-text">
+              <!-- <p class="section-text">
                 Call or reach out to us in social media to schedule an appointment with one of our premier barbers.
               </p>
 
@@ -685,33 +655,32 @@
                 <li class="contact-us"><ion-icon name="logo-facebook" aria-hidden="true"></ion-icon><a href="https://www.facebook.com/KCaballeroBarber" target="_blank" style="color: white; font-size: large;">https://www.facebook.com/KCaballeroBarber</a></li>
                 <li class="contact-us"><ion-icon name="logo-instagram" aria-hidden="true"></ion-icon> <a href="https://www.instagram.com/kc.barbero" target="_blank" style="color: white; font-size: large;">https://www.instagram.com/kc.barbero</a></li>
                 <li class="contact-us"><ion-icon name="call" aria-hidden="true"></ion-icon><a href="tel:+19393234537" style="color: white; font-size: large;">+1 (939) 323-4537</a></li>
-            </ul>
+            </ul> -->
 
-              <!-- <form action="" class="appoin-form">
+              <form action="" METHOD="POST" class="appoin-form">
 
                 <div class="input-wrapper">
-                  <input type="text" name="name" placeholder="Your Full Name" required class="input-field">
+                  <input type="text" name="customer_name" placeholder="Your Full Name" required class="input-field" maxlength="100">
 
-                  <input type="email" name="email_address" placeholder="Email Address" required class="input-field">
+                  <input type="email" name="email_address" placeholder="Email Address" required class="input-field" maxlength="100">
                 </div>
 
                 <div class="input-wrapper">
-                  <input type="text" name="phone" placeholder="Phone Number" required class="input-field">
+                  <input type="text" name="phone_number" placeholder="Phone Number" required class="input-field">
 
-                  <select name="category" class="input-field">
+                  <select name="service_requested" class="input-field">
 
-                    <option value="Select category">Select category</option>
-                    <option value="Beauty & spa">Beauty & spa</option>
-                    <option value="Body massage">Body massage</option>
-                    <option value="Shaving & Facial">Shaving & Facial</option>
-                    <option value="Hair Color">Hair Color</option>
+                    <option value="Select Service">Select Service</option>
+                    <option value="Hair Cut">Hair Cut</option>
+                    <option value="Beauty & Spa">Beauty & Spa</option>
+                    <option value="Body Treatments">Body Treatments</option>
 
                   </select>
                 </div>
 
-                <input type="date" name="date" required class="input-field date">
+                <input type="date" name="date_requested" id="date" required class="input-field date" min="<?php echo date('m-d-Y'); ?>">
 
-                <textarea name="message" placeholder="Write Message" required class="input-field"></textarea>
+                <textarea name="customer_message" placeholder="Write Message" required class="input-field" maxlength="200"></textarea>
 
                 <button type="submit" class="form-btn">
                   <span class="span">Request Now</span>
@@ -719,7 +688,7 @@
                   <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
                 </button>
 
-              </form> -->
+              </form>
 
             </div>
 
@@ -757,7 +726,7 @@
 
           <form action="" METHOD="POST" class="input-wrapper">
 
-            <input type="email" name="email_address" placeholder="Enter Your Email" required class="email-field">
+            <input type="email" name="subscriber_email_address" placeholder="Enter Your Email" required class="email-field">
 
             <button type="submit" class="btn has-before">
               <span class="span">Subscribe Now</span>
@@ -921,6 +890,14 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+  // Get date input element
+  var dateInput = document.getElementById('date');
+
+  // Set the min attribute to today's date
+  dateInput.min = new Date().toISOString().split('T')[0]
+  
+  </script>
 
 </body>
 
