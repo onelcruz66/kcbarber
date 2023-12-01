@@ -63,6 +63,13 @@ class RequestedAppointments(db.Model):
     date_requested = db.Column(db.Date, nullable=False)
     customer_message = db.Column(db.String(200))
 
+class BackupRequestedAppointments(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    customer_name = db.Column(db.String(100), nullable=False)
+    email_address = db.Column(db.String(100), nullable=False)
+    phone_number = db.Column(db.String(20), nullable=False)
+    service_requested = db.Column(db.String(20), nullable=False)
+
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), nullable=False, unique=True)
@@ -118,9 +125,18 @@ def home():
                                                     date_requested=date_requested, \
                                                     customer_message=customer_message)
             
+            store_appointment = BackupRequestedAppointments(customer_name=customer_name, \
+                                                            email_address=email_address, \
+                                                            phone_number=phone_number, \
+                                                            service_requested=service_requested)
+            
             # Push to RequestedAppointments database table.
             try:
                 db.session.add(new_appointment)
+                db.session.commit()
+
+                
+                db.session.add(store_appointment)
                 db.session.commit()
                 return redirect(url_for("appointment"))
             except:

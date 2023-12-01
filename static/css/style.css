@@ -662,7 +662,11 @@ select.input-field,
   font-family: var(--ff-rubik);
 }
 
-.input-field.date { text-transform: uppercase; }
+.input-field.date { 
+  text-transform: uppercase;
+  width: 100%;
+}
+
 
 .input-field::-webkit-calendar-picker-indicator { opacity: 0.85; }
 
