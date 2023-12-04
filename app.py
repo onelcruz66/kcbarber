@@ -20,9 +20,7 @@ from datetime import datetime
 import psycopg2
 from dotenv import load_dotenv
 
-def configure():
-    load_dotenv()
-
+load_dotenv()
 db_user=os.getenv('db_user')
 db_password=os.getenv('db_password')
 db_url=os.getenv('db_url')
@@ -233,6 +231,5 @@ def delete_appointment(appointment_id):
     return redirect(url_for("admin"))
 
 if __name__ == '__main__':
-    configure()
     app.run(host="0.0.0.0", port=5000)
 
