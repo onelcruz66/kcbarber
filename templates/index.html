@@ -4,24 +4,38 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <!-- 
     - primary meta tags
   -->
   <title>KC Hair & Skincare</title>
   <meta name="title" content="KC Hair & Skincare">
   <meta name="description" content="Barber shop located in Rincon, Puerto Rico">
+  <meta name="description" content="KC Hair & Skincare - Barber shop located in Rincon, Puerto Rico.  We provide skincare, massage, and barber, and hair styling services.">
+  <meta name="keywords" content="Barber, Rincon, Puerto Rico, PR, Skincare, Barbershop, Fade, Massage, razor shave, facials, keratine, skincare, hair styling">
+  <meta name="robots" content="INDEX,FOLLOW">
+
+  <!-- Mobile Specific Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Favicons - Place favicon.ico in the root directory -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon_kc_180x180.jpg">
+  <link rel="icon" type="image/png" sizes="192x192" href="/static/images/favicon_kc_192x192.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon_kc_32x32.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon_kc_16x16.jpg">
+  <link rel="manifest" href="/static/images/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
 
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="/static/images/favicon_kc.jpg" type="image/svg+xml"><!--/static/images/favicon_kc.jpg-->
+  <!-- <link rel="shortcut icon" href="/static/images/favicon_kc.jpg" type="image/svg+xml"> -->
 
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="/static/css/style.css"> <!--/static/css/style.css-->
+  <link rel="stylesheet" href="/static/css/style.css">
 
   <!-- 
     - google font link
@@ -35,12 +49,12 @@
   <!-- 
     - flaticon
   -->
-  <link rel="stylesheet" href="/static/css/flaticon.min.css"><!--/static/css/flaticon.min.css-->
+  <link rel="stylesheet" href="/static/css/flaticon.min.css">
 
   <!-- 
     - preload images
   -->
-  <link rel="preload" as="image" href="/static/images/barber_hero.jpg"><!--/static/images/barber_hero.jpg-->
+  <link rel="preload" as="image" href="/static/images/barber_hero.jpg">
 
 </head>
 
@@ -173,7 +187,7 @@
       -->
 
       <section class="section hero has-before has-bg-image" id="home" aria-label="home"
-        style="background-image: url('/static/images/barber_hero.jpg')"><!---->
+        style="background-image: url('/static/images/barber_hero.jpg')">
         <div class="container">
 
           <h1 class="h1 hero-title">KC Hair & Skincare</h1>
@@ -330,26 +344,6 @@
                   <p class="btn-text">Body Treatments</p>
                 </button>
               </li>
-
-              <!-- <li>
-                <button class="filter-btn" data-filter-btn="face-washing">
-                  <div class="btn-icon">
-                    <i class="flaticon-spa" aria-hidden="true"></i>
-                  </div>
-
-                  <p class="btn-text">Face Washing</p>
-                </button>
-              </li> -->
-
-              <!-- <li>
-                <button class="filter-btn" data-filter-btn="meditations">
-                  <div class="btn-icon">
-                    <i class="flaticon-yoga" aria-hidden="true"></i>
-                  </div>
-
-                  <p class="btn-text">Meditations</p>
-                </button>
-              </li> -->
 
               <li>
                 <button class="filter-btn" data-filter-btn="shaving">
@@ -678,7 +672,7 @@
                   </select>
                 </div>
 
-                <input type="date" name="date_requested" id="date" required class="input-field date" min="<?php echo date('m-d-Y'); ?>">
+                <input type="date" name="date_requested" id="date" placeholder="Date Requested" class="input-field date" min="<?php echo date('m-d-Y'); ?>">
 
                 <textarea name="customer_message" placeholder="Write Message" required class="input-field" maxlength="200"></textarea>
 

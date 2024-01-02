@@ -700,7 +700,10 @@ textarea.input-field {
   color: var(--eerie-black-1);
 }
 
-
+.date {
+  width: 100%;
+  appearance: none;
+}
 
 
 
